@@ -15,7 +15,6 @@ class nav_the extends StatelessWidget {
       title: 'dragon',
       color: Colors.blue,
       theme: ThemeData.light(),
-
     );
   }
 }
@@ -31,7 +30,32 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //Aspcet Ratio
 
+      // body: Container(
+      //   width: double.infinity,
+      //   height: double.infinity,
+      //   color: Colors.red,
+      //   alignment: Alignment.center,
+      //   child: AspectRatio(
+      //     aspectRatio: 16 / 9,
+      //     child: Container(
+      //       color: Colors.blue,
+      //     ),
+      //   ),
+      // ),
+
+      //Sized factor
+
+      body: Center(
+        child: FractionallySizedBox(
+          widthFactor: 0.5,
+          heightFactor: 0.3,
+          child: Container(
+            color: Colors.blue,
+          ),
+        ),
+      ),
     );
   }
 }
