@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(con());
+  runApp(const con());
 }
 
 class con extends StatelessWidget {
@@ -24,13 +24,14 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
   int counter = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        title: const Text('Home'),
       ),
       body: Center(
         child: Text('counter $counter'),
@@ -42,23 +43,20 @@ class _HomeState extends State<Home> {
             onPressed: () {
               counter++;
               print(counter);
-              setState(() {
-
-              });
+              setState(() {});
             },
-            child: Icon(Icons.add),
+            child: const Icon(Icons.add),
           ),
-          SizedBox(width:50,),
-
+          const SizedBox(
+            width: 50,
+          ),
           FloatingActionButton(
             onPressed: () {
               counter--;
               print(counter);
-              setState(() {
-
-              });
+              setState(() {});
             },
-            child: Icon(Icons.remove),
+            child: const Icon(Icons.remove),
           ),
         ],
       ),
