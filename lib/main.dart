@@ -35,15 +35,32 @@ class _HomeState extends State<Home> {
       body: Center(
         child: Text('counter $counter'),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          counter++;
-          print(counter);
-          setState(() {
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          FloatingActionButton(
+            onPressed: () {
+              counter++;
+              print(counter);
+              setState(() {
 
-          });
-        },
-        child: Icon(Icons.add),
+              });
+            },
+            child: Icon(Icons.add),
+          ),
+          SizedBox(width:50,),
+
+          FloatingActionButton(
+            onPressed: () {
+              counter--;
+              print(counter);
+              setState(() {
+
+              });
+            },
+            child: Icon(Icons.remove),
+          ),
+        ],
       ),
     );
   }
