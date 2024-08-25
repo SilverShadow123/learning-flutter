@@ -2,11 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(nav_the());
+  runApp(con());
 }
 
-class nav_the extends StatelessWidget {
-  const nav_the({super.key});
+class con extends StatelessWidget {
+  const con({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +16,15 @@ class nav_the extends StatelessWidget {
   }
 }
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class Home extends StatefulWidget {
+  Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  int counter = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -26,72 +33,17 @@ class Home extends StatelessWidget {
         title: Text('Home'),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Home1(Image.asset('assets/images/a-girl.jpg'))));
-                },
-                child: Text('Go Home 1')),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Home2('The quick brown fox jumps')));
-                },
-                child: Text('Go Home 2')),
-          ],
-        ),
+        child: Text('counter $counter'),
       ),
-    );
-  }
-}
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          counter++;
+          print(counter);
+          setState(() {
 
-class Home1 extends StatelessWidget {
-
-   var msg;
-
-   Home1(
-
-      this.msg,
-
-      {super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Home1'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Home2('The quick brown fox jumps')));
-            },
-            child: msg),
-
-      ),
-    );
-  }
-}
-
-class Home2 extends StatelessWidget {
-
-  String msg;
-
-  Home2(
-
-  this.msg,
-
-      {super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(msg),
+          });
+        },
+        child: Icon(Icons.add),
       ),
     );
   }
