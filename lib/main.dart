@@ -1,17 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:learning_nav_theme/home_screen.dart';
 
 void main() {
-  runApp(nav_the());
+  runApp(sum_app());
 }
 
-class nav_the extends StatelessWidget {
-  const nav_the({super.key});
+class sum_app extends StatelessWidget {
+  const sum_app({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Home(),
+      home: home_screen(),
       title: 'dragon',
       color: Colors.blue,
       theme: ThemeData.light(),
@@ -19,18 +20,3 @@ class nav_the extends StatelessWidget {
   }
 }
 
-class Home extends StatefulWidget {
-  const Home({super.key});
-
-  @override
-  State<Home> createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-
-    );
-  }
-}
